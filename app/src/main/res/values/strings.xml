@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Quiz</string>
+    <string name="lbl_pergunta">Pergunta</string>
+    <string name="lbl_question">Question</string>
+    <string name="lbl_verdadeiro">Verdadeiro</string>
+    <string name="lbl_falso">Falso</string>
 </resources>

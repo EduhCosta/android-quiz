@@ -26,9 +26,9 @@ public class TxtReader {
             InputStreamReader inputStreamReader = new InputStreamReader(inputStream);
             BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
             String linha = "";
-            while(linha !=null){ // enquanto não for null..
-                linha = bufferedReader.readLine();   // lemos a próxima linha...
-                listLinhas.add(linha); // adicionamos a linha na LinkedList
+            while(linha !=null) {
+                linha = bufferedReader.readLine();
+                listLinhas.add(linha);
             }
             inputStream.close();
         } catch (IOException e) {
