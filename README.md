@@ -1,6 +1,6 @@
-# Quiz App - IGTI challanger
+# Quiz App - IGTI challenger
 
-Quiz App with questions from a ´txt file´, with percentage of corrects responses on final screen. 
+Quiz App with questions from a `txt file`, with percentage of corrects responses on final screen. 
 
 ## Requirements
 
