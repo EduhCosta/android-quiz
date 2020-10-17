@@ -6,5 +6,5 @@
     <string name="lbl_falso">Falso</string>
     <string name="toast_message_success">Acertou!</string>
     <string name="toast_message_error">Errou!</string>
-    <string name="lbl_question_title">\"Pergunta - \"</string>
+    <string name="lbl_question_title">Pergunta - </string>
 </resources>
