@@ -7,4 +7,7 @@
     <string name="toast_message_success">Acertou!</string>
     <string name="toast_message_error">Errou!</string>
     <string name="lbl_question_title">Pergunta - </string>
+    <string name="lbl_resultado">Resultado</string>
+    <string name="val_default_percentage">0%</string>
+    <string name="lbl_try_again">Tentar novamente</string>
 </resources>

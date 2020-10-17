@@ -2,6 +2,7 @@ package com.example.quiz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Bundle;
 import android.util.Log;
@@ -9,12 +10,15 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.quiz.enums.Constants;
 import com.example.quiz.utils.Engine;
 import com.example.quiz.utils.TxtReader;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+
+import static com.example.quiz.enums.Constants.PERCENTAGE_RESULTS;
 
 public class MainActivity extends AppCompatActivity {
     private Engine engine;
@@ -57,14 +61,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void next() {
-        if (actualQuestion < (questions.size() - 1)) {
+        if (actualQuestion < (questions.size() - 2)) {
             actualQuestion++;
             this.setQuestionOnCard();
         } else {
-            actualQuestion--;
+            actualQuestion = 0;
+            Intent resultIntent = new Intent(this, ResultActivity.class);
+            String percent = this.engine.showPercentage();
+            resultIntent.putExtra(PERCENTAGE_RESULTS.getValor(), percent);
+            startActivity(resultIntent);
         }
     }
-
 
     private List<String> defineResponsesList(LinkedList<String> fileContent) {
         List<String> responseList = new ArrayList<>();
@@ -85,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setTitleCount(int index, int totalQuestion) {
         TextView title = findViewById(R.id.title);
-        String placeholder = getString(R.string.lbl_question_title) +  (index + 1) + "/" + (totalQuestion - 1);
+        String placeholder = getString(R.string.lbl_question_title) + " " + (index + 1) + "/" + (totalQuestion - 1);
         title.setText(placeholder);
     }
 
@@ -93,6 +100,5 @@ public class MainActivity extends AppCompatActivity {
         TextView questionContent = findViewById(R.id.question_content);
         questionContent.setText(question);
     }
-
 
 }

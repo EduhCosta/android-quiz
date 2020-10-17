@@ -1,6 +1,7 @@
 package com.example.quiz.utils;
 
 import android.content.Context;
+import android.util.Log;
 import android.widget.Toast;
 
 import com.example.quiz.R;
@@ -16,15 +17,18 @@ public class Engine {
         this.respostasCorretas = respostasCorretas;
     }
 
-    public int showPercentage() {
+    public String showPercentage() {
         int success = 0;
-        for(int i = 0; i < respostasCorretas.size() ; i++) {
+        for(int i = 0; i < respostasCorretas.size(); i++) {
             if (respostas.get(i).equals(respostasCorretas.get(i))) {
                 success++;
             }
         }
 
-        return success / respostasCorretas.size() * 100;
+        Double calc = (((double)success / (double)respostasCorretas.size()) * 100);
+        Log.i("@_", "showPercentage: " + success);
+        Log.i("@_", "showPercentage: " + respostasCorretas.size());
+        return calc + "%";
     }
 
     private void validateResponse(Context ctx, int position) {
